@@ -2,7 +2,11 @@ Hadean::Application.routes.draw do
 
   # mount Resque::Server.new, at: "/resque"
 
-  namespace(:admin){ namespace(:customer_service){ resources :comments } }
+  namespace(:admin){ 
+    namespace(:customer_service){
+     resources :comments 
+     } 
+   }
 
   resources :user_sessions, :only => [:new, :create, :destroy]
 

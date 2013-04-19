@@ -3,6 +3,9 @@ source 'http://rubygems.org'
 ## Bundle rails:
 gem 'rails', '3.2.13'
 
+gem 'execjs'
+gem 'therubyracer'
+
 group :assets do
   #gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier', '>= 1.0.3'
@@ -48,12 +51,14 @@ gem 'will_paginate', '~> 3.0.4'
 
 #gem 'memcache-client', '~> 1.8.5'
 group :production do
-  gem 'mysql2', '~> 0.3.10'
+  gem 'mysql2'
   gem 'pg'
 end
 
+
 group :development do
-  gem 'sqlite3'
+#  gem 'sqlite3'
+  gem 'mysql2'
   #gem 'awesome_print'
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem "autotest-rails-pure"
