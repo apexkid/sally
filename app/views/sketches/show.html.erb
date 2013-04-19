@@ -1,0 +1,29 @@
+<table class="sketchs" summary="Sketch information">
+	<% @user = @sketch.user %>
+	<tr>
+		<td>
+			<p> Gender: <%= @sketch.gender %> </p>
+			<h4> Mobile: <%= @sketch.mobile %> </h4>
+			<p> About: <%= @sketch.about %> </p>
+			<p> Interest: <%= @sketch.gender %> </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= render 'shared/stats' %>
+			<%= link_to "See friends", user_friends_path(@user) %> 
+			<%= link_to "See subscriptions", user_subscribers_path(@user) %> 
+		</td>
+		<td>
+			
+			<% unless current_user == @user %>
+				<%= render 'relationships/relation_form' %>
+				<%= render 'relationships/subscriber_form' %>
+			<% end %>
+
+			<% if current_user == @user %>
+				<p> <%= link_to "Edit Sketch", sketches_edit_path %> </p>
+			<% end %>
+		</td>
+	</tr>
+</table>

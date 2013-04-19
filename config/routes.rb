@@ -2,6 +2,18 @@ Hadean::Application.routes.draw do
 
   # mount Resque::Server.new, at: "/resque"
 
+
+  match "/sketches/edit" => "sketches#edit"
+  resources :sketches, :only => [:create, :index, :show, :update]
+
+  resources :users do
+    resources :friends, :only => [:index, :create, :destroy]
+    resources :subscribers, :only => [:index, :create, :destroy]
+  end
+
+  resources :friendrequests, :only =>[:index, :create, :destroy]
+
+  #Old code 
   namespace(:admin){ 
     namespace(:customer_service){
      resources :comments 
@@ -21,7 +33,7 @@ Hadean::Application.routes.draw do
   resources :states,      :only => [:index]
   resource :about,        :only => [:show]
   resources :terms,       :only => [:index]
-  resource  :unsubscribe,       :only => :show
+  resource  :unsubscribe, :only => :show
 
   root :to => "welcome#index"
 

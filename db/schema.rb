@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415012849) do
+ActiveRecord::Schema.define(:version => 20130415012855) do
 
   create_table "accounting_adjustments", :force => true do |t|
     t.integer  "adjustable_id",                                 :null => false
@@ -416,6 +416,16 @@ ActiveRecord::Schema.define(:version => 20130415012849) do
   add_index "purchase_orders", ["supplier_id"], :name => "index_purchase_orders_on_supplier_id"
   add_index "purchase_orders", ["tracking_number"], :name => "index_purchase_orders_on_tracking_number"
 
+  create_table "relationships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "status"
+    t.string   "type"
+    t.datetime "created_at",  :null => false
+    t.datetime "accepted_at"
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "return_authorizations", :force => true do |t|
     t.string   "number"
     t.decimal  "amount",         :precision => 8, :scale => 2,                   :null => false
@@ -531,6 +541,17 @@ ActiveRecord::Schema.define(:version => 20130415012849) do
 
   create_table "shipping_zones", :force => true do |t|
     t.string "name", :null => false
+  end
+
+  create_table "sketches", :force => true do |t|
+    t.string   "occupation"
+    t.string   "gender"
+    t.string   "mobile"
+    t.text     "interest"
+    t.text     "about"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "slugs", :force => true do |t|

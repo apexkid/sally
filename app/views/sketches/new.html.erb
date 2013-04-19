@@ -1,0 +1,29 @@
+<h2> Paint your Sketch :) </h2>
+
+<%= form_for(@sketch) do |p| %>
+	<%= render 'shared/error_messages',:object => p.object %>
+
+	<div class="field">
+		<%= p.label :interest, 'Interest' %> <br/>
+		<%= p.text_field :interest %>
+	</div>
+
+	<div class="field">
+		<%= p.label :mobile, 'Mobile Num' %> <br/>
+		<%= p.text_field :mobile %>
+	</div>
+
+	<div class="field">
+		<%= p.label :about, 'About' %> <br/>
+		<%= p.text_field :about %>
+	</div>
+
+	<div class="field">
+		<%= p.label :occupation, 'Occupation' %> <br/>
+		<%= p.text_field :occupation %>
+	</div>
+
+	<div class="actions">
+		<%= p.submit "Update" %>
+	</div>
+<% end %>

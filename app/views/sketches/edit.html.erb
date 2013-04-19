@@ -1,0 +1,36 @@
+<h1>Edit your sketch</h1>
+
+<%= form_for(@sketch) do |p| %>
+	<%= render 'shared/error_messages',
+		:object => p.object %>
+
+	<h4> Gender: </h4>
+	<div class="radio">
+		<%= p.radio_button :gender, "Male" %> MALE
+		<%= p.radio_button :gender, "Female" %> FEMALE
+	</div>
+
+	<div class="field">
+		<%= p.label :interest, 'Interest' %> <br/>
+		<%= p.text_field :interest %>
+	</div>
+
+	<div class="field">
+		<%= p.label :mobile, 'Mobile Num' %> <br/>
+		<%= p.text_field :mobile %>
+	</div>
+
+	<div class="field">
+		<%= p.label :about, 'About' %> <br/>
+		<%= p.text_field :about %>
+	</div>
+
+	<div class="field">
+		<%= p.label :occupation, 'Occupation' %> <br/>
+		<%= p.text_field :occupation %>
+	</div>
+
+	<div class="actions">
+		<%= p.submit "Update" %>
+	</div>
+<% end %>
