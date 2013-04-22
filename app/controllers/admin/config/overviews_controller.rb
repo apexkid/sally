@@ -4,7 +4,7 @@ class Admin::Config::OverviewsController < Admin::Config::BaseController
     #@admin_config_overviews = Admin::Config::Overview.all
 
     #respond_to do |format|
-    #  format.html # index.html.erb
+    #  format.html # index.html.erbwhen
     #end
   end
 

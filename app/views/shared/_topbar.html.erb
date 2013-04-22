@@ -1,0 +1,152 @@
+    <div class="navbar navbar-fixed-top" role="navigation" id="utility">
+      <div class="navbar-inner">
+        <div class="container" >
+
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</a>
+<%= link_to "Dwingg", root_path, :class => 'brand' %>
+  <div class="nav-collapse collapse">
+   <% if current_user %>
+      <ul class="nav">
+        <li class="divider-vertical"></li>
+        <li><%= link_to sketches_path do %>
+          <i class="icon-user"> Profile
+          <% end %>
+        </li>
+        <li class="divider-vertical"></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-shopping-cart"></i> Cart<i class="icon-chevron-right"></i></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to(shopping_cart_items_path) do %>
+              <i class="icon-shopping-cart"></i> View Cart
+              <% end %>
+            </li>
+
+            <li><a href="#"><i class="icon-star"></i> Wishlist</a></li>
+
+              <%= link_to myaccount_store_credit_path do %>
+                <i class="icon-briefcase"></i> My Wallet
+              <% end %>
+              </li>
+            <li><%= link_to myaccount_orders_path do%>
+             <i class="icon-th-list"></i> My Orders
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="divider-vertical"></li>
+        <li><a href="#contact"><i class="icon-heart"></i> Instinct</a></li>
+        <li class="divider-vertical"></li>
+        <li>
+          <form class="form-search navbar-search">
+            <div class="input-append">
+            <input type="text" class="span3 search-query" placeholder="Search a Person, Brand, Product, Category">
+            <button type="submit" class="btn"><i class="icon-search"></i> </button>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <div class="pull-right">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li><a href="#"><i class="icon-gift"></i>Gift Central</a></li>
+          <li class="divider-vertical"></li>
+          <li><%= link_to sketches_path do %>
+            <%= current_user.profile.name %>
+            <% end %>
+          </li>
+          <li class="divider-vertical navbar-text"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-cogs"></i> </a>
+            <ul class="dropdown-menu pull-right">
+              <li>
+              <%= link_to myaccount_overview_path do %>
+                  <i class="icon-wrench"></i> Account Details
+                <% end %>
+              </li>
+
+              <% if current_user.admin? %>
+                <li><%= link_to admin_users_path do %>
+                    <i class="icon-user-md"></i> Admin Panel
+                  <% end %>
+                </li>
+              <% end %>
+
+              <li><a href="#"><i class="icon-eye-close"></i> Privacy Settings</a></li>
+              <li>
+              <%= link_to myaccount_store_credit_path do %>
+                <i class="icon-briefcase"></i> My Wallet
+              <% end %>
+              </li>
+
+              <li>
+              <%= link_to myaccount_credit_cards_path do %>
+                <i class="icon-credit-card"></i> Credit Card Profiles
+              <% end %>
+              </li>
+
+               <hr/>
+          <li>
+          <%= link_to logout_path do %>
+            <i class="icon-signout"></i> Logout
+          <% end %>
+          </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+       <ul class="nav">
+        <li class="divider-vertical"></li>
+        <li> </li>
+        <li class="divider-vertical"></li>
+        <li><%= link_to(shopping_cart_items_path) do %>
+          <i class="icon-shopping-cart"></i> View Cart
+          <% end %>
+        </li>
+        <li class="divider-vertical"></li>
+     
+        <li>
+                <form class="form-search navbar-search">
+                  <div class="input-append">
+                  <input type="text" class="span2 search-query" placeholder="What are you Dwingg ?">
+                  <button type="submit" class="btn"><i class="icon-search"></i> </button>
+                  </div>
+                </form>
+        </li>
+      
+       </ul>
+      <div class="pull-right">
+        <ul class="nav">
+          <li class="divider-vertical"></li>
+          <li><a href="#"><i class="icon-gift"></i>Gift Central</a></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-signin"></i> Login<i class="icon-chevron-right"></i></a>
+            <ul class="dropdown-menu pull-right">
+              <li>
+              <%= render :partial => 'user_sessions/login' %>
+
+              </li>
+              <li class=""><%= link_to 'Forgot password?', new_customer_password_reset_path() %> </li>
+                            <li class="divider"></li>    
+              <li>
+                <%= link_to login_path do %>
+                  <h5><i class="icon-book"></i>  Register Now </h5>
+                <% end %>
+              </li>
+            </ul>
+        </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+      </div>
+  </div>
+</div>
+
+       
+         <!--/.nav-collapse -->

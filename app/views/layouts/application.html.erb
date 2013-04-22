@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>
-    <%= site_name %>: <%= yield :title %>
-  </title>
-  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= @title %> | Chimera </title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <meta name="description" content="head">
+    <%= stylesheet_link_tag "application", :media => "all" %> 
+    <%= javascript_include_tag "application" %>
+        <!--[if lt IE 8]
+        <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection'%>
+        <![endif]-->
+        <!--[if lt IE 7]
+            <%= stylesheet_link_tag 'ie6.css', :media => 'screen, projection' %>
+        <![endif]-->
+    <%= csrf_meta_tags %>
+      <%#, :cache => 'all_1' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%= render :partial => 'shared/topbar' %>
+    <div id="main" role="main">
 
-  <%= stylesheet_link_tag "foundation.css" %>
-  <%= stylesheet_link_tag 'site/app.css' %>
-    <!--[if lt IE 8]
-  <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection'%>
-  <![endif]-->
-  <!--[if lt IE 7]
-      <%= stylesheet_link_tag 'ie6.css', :media => 'screen, projection' %>
-  <![endif]-->
-  <%= csrf_meta_tag %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "foundation" %>
-  <%= yield :head %>
 
-</head>
+      <div class="container-fluid" >
+            <div class="row-fluid">
+              <% if notice || alert %>
+              <div class="flash_messages">
+              <%= raw "<div data-alert class='alert-box warning'> #{notice} <a href='' class='close'>&times;</a></div>"  if notice %>
+              <%= raw "<div data-alert class='alert-box alert'>#{alert} <a href='' class='close'>&times;</a></div>"     if alert %>
+            </div>
+              <% end %>
+              </div>
 
-<body >
-<div id='body_wrapper'>
-  <div class="row">
-    <% if notice || alert %>
-      <div class="flash_messages">
-        <%= raw "<div data-alert class='alert-box warning'> #{notice} <a href='' class='close'>&times;</a></div>"  if notice %>
-        <%= raw "<div data-alert class='alert-box alert'>#{alert} <a href='' class='close'>&times;</a></div>"     if alert %>
-      </div>
-    <% end %>
-  </div>
+              <div class="row-fluid">
+              <%if current_user %> 
 
-    <%= render :partial => '/shared/welcome_header'%>
+              <% end %>
+              <section id="content" class="span7"> 
+              <%= yield %>
+              </section>
+              <% if current_user %>
+ 
+            <% end %>
+          </div>
+          <div id='prefooter_wrapper'>&nbsp;</div>
+      </div>  <!--! end of .container -->
+          </div> <!--! end of #main -->
 
-    <div id='content_wrapper' class='row <%= "myaccount" if myaccount_tab %> '>
-      <%  if myaccount_tab %>
-        <hr class="first_double_hr">
-        <hr class="second_double_hr">
-        <%= render :partial => '/shared/myaccount_subheader' %>
-      <% end %>
-      <%= yield %>
-    </div>
-    <div id='prefooter_wrapper'>&nbsp;</div>
-</div>
-
-  <%= render 'shared/main_footer' %>
-
-  <%= yield :bottom %>
+      <%= render 'shared/main_footer' %>
+       <%= yield :bottom %>
 
   <script>
   jQuery(window).ready(

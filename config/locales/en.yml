@@ -2,9 +2,9 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  company:              'RoR Ecommerce'
-  hello:                'Hello'
-  out_of_stock_notice:  'Sorry this item is out of stock.'
+  company:              'Dwingg'
+  hello:                'Hey there'
+  out_of_stock_notice:  'Sorry, this item has run out of stock !'
   item_saved_for_later: 'The item will be saved for later.'
   reset_password_title: 'Confirm your identity to reset password'
   reset_password_text:  'Enter your email below and Click the Continue button.'
@@ -15,11 +15,11 @@ en:
   the_credit_card:      "the Credit Card."
   credit_card:          "Credit Card"
   the_order:            "the Order."
-  the_order_purchased:  "The order has been purchased."
+  the_order_purchased:  "The order has been placed."
   is_not_valid:         'is not valid.'
   login_successful:     "Login successful!"
   login_failure:        "Invalid email or password."
-  logout_successful:    "Logout successful!"
+  logout_successful:    "Logout successful, we'll see you soon!"
 
   nothing_in_cart:       "You don't have anything in your cart."
   only_items_saved_for_later: "You only have items Saved for Later."

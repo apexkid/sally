@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this password_reset from being saved:</h2>
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited your password from being reset.</h2>
 
     <ul>
     <% @user.errors.full_messages.each do |msg| %>

@@ -1,7 +1,8 @@
-<%= form_for search_product, :html => {:class => 'search'} do %>
-  <div class="field search">
-    <span class="icon-search"></span>
-    <%= text_field_tag 'q', nil , :class => 'input-search text', :id => 'term' %>
-    <%= submit_tag 'Go',          :class => 'button spade' %>
+<%= form_for search_product, :html => {:class => 'form-search navbar-search'} do %>
+  <div class="input-append">
+    <%= text_field_tag 'q', nil , :class => 'span3 search-query', :id => 'term', :html => {:placeholder => 'Search a Person, Brand, Product, Category'} %>
+    <%= submit_tag '', :class => 'btn' do %>
+    <i class="icon-search"></i> 
+    <% end %>
   </div>
 <% end %>

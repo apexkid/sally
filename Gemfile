@@ -5,6 +5,9 @@ gem 'rails', '3.2.13'
 
 gem 'execjs'
 gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 
 group :assets do
   #gem 'coffee-rails', "~> 3.1.0"

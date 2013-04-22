@@ -19,7 +19,7 @@ class SketchesController < ApplicationController
 		if @sketch
 			@title = "Sketch"
 		else
-			flash[:notice] = "No d such user exists"
+			flash[:notice] = "No such user exists"
 			redirect_to root_path
 		end
 	end

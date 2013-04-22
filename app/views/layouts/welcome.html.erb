@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>
-    <%= site_name %>: <%= yield :title %>
-  </title>
-  <link rel="shortcut icon" href="/assets/favicon.ico" />
-
-  <%= stylesheet_link_tag "foundation" %>
-  <%= stylesheet_link_tag 'site/app.css' %>
-    <!--[if lt IE 8]
-  <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection'%>
-  <![endif]-->
-  <!--[if lt IE 7]
-      <%= stylesheet_link_tag 'ie6.css', :media => 'screen, projection' %>
-  <![endif]-->
-  <%= csrf_meta_tag %>
-
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag "foundation" %>
-  <%#, :cache => 'all_1' %>
-  <%= yield :head %>
-
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= @title %> | Chimera </title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <meta name="description" content="head">
+    <%= stylesheet_link_tag "application", :media => "all" %> 
+    <%= javascript_include_tag "application" %>
+        <!--[if lt IE 8]
+        <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection'%>
+        <![endif]-->
+        <!--[if lt IE 7]
+            <%= stylesheet_link_tag 'ie6.css', :media => 'screen, projection' %>
+        <![endif]-->
+    <%= csrf_meta_tags %>
+      <%#, :cache => 'all_1' %>
+    <%= yield(:head) %>
+  </head>
 <body >
 <div id='body_wrapper'>
   <% if notice || alert %>
@@ -35,7 +31,7 @@
     </div>
   <% end %>
 
-    <%= render :partial => '/shared/welcome_header'%>
+    <%= render :partial => 'shared/topbar' %>
 
     <div id='content_wrapper' class='row'>
       <%= yield %>

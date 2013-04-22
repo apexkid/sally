@@ -1,0 +1,33 @@
+  <div id='signup' class='offset-by-one'>
+    <%= form_for @user, :url => customer_registrations_path(@user)  do |form| %>
+      <h3>New to <%= site_name %>?</h3>
+      <p>A <%= site_name %> account is required to checkout. </p>
+      <fieldset>
+         <ol id='registration_form'>
+              <li>
+                  <%=form.label :first_name, 'First name*' %>
+                  <%= form.text_field :first_name %>
+              </li>
+              <li>
+                  <%=form.label :last_name %>
+                  <%= form.text_field :last_name %>
+              </li>
+              <li>
+                  <%=form.label :email, 'Email' %>
+                  <%= form.email_field :email, :autocomplete => 'off', :autocapitalize => 'off'  %>
+              </li>
+              <li>
+                  <%=form.label :password, 'Password' %>
+                  <%= form.password_field :password, :autocomplete => 'off', :autocapitalize => 'off'  %>
+              </li>
+              <li>
+                  <%=form.label :password_confirmation, 'Confirm' %>
+                  <%= form.password_field :password_confirmation, :autocomplete => 'off', :autocapitalize => 'off'  %>
+              </li>
+         </ol>
+      <%#= form.buttons do %>
+        <%= form.submit "Register", :class => 'button' %>
+      <%# end %>
+      </fieldset>
+    <% end %>
+  </div>

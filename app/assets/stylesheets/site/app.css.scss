@@ -1,17 +1,6 @@
-//= require  /site/app_mixins
 @import "site/my_account";
 @import "site/cart";
 @import "site/panel";
-@import "compass/layout/sticky-footer";
-@import "compass/utilities/general/clearfix";
-
-// RoR eCommerce Customer-Facing Styles
-
-@include sticky-footer(54px, "#body_wrapper", "#prefooter_wrapper", "#footer_wrapper");
-
-.clearfix {
-  @include clearfix();
-}
 
 .flash_messages {
   margin-top: 20px;
