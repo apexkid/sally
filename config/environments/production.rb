@@ -27,14 +27,14 @@ Hadean::Application.configure do
   config.assets.precompile += [ 'admin.css',
                                 'admin/app.css',
                                 'admin/cart.css',
-                                'admin/foundation.css',
-                                'admin/normalize.css',
+               
+
                                 'admin/help.css',
                                 'admin/ie.css',
                                 'autocomplete.css',
                                 'application.css',
                                 'chosen.css',
-                                'foundation.css',
+                                
                                 'home_page.css',
                                 'ie.css',
                                 'ie6.css',
@@ -47,11 +47,6 @@ Hadean::Application.configure do
                                 'shopping_cart_page.css',
                                 'signup.css',
                                 'site/app.css',
-                                'sprite.css',
-                                'tables.css',
-                                'cupertino/jquery-ui-1.8.12.custom.css',# in vendor
-                                'modstyles.css', # in vendor
-                                'scaffold.css' # in vendor
                                 ]
 
   # Full error reports are disabled and caching is turned on

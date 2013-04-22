@@ -4,23 +4,26 @@
                   :url => user_sessions_path(@user_session),
                   :html => {:class => 'well'} do |form| %>
       <legend> Sign In</legend>
-      <fieldset>
-         <ul id='login_form well'>
 
-              <li>
-                  <%=form.label :email, 'Email' %>
-                  <%= form.email_field :email, :autocomplete => 'off', :autocapitalize => 'off' %>
-              </li>
+      <div class="control-group" >
+<%=form.label :email, 'Email', :class =>'control-label' %>
 
-              <li>
-                  <%=form.label :password, 'Password' %>
-                  <%= form.password_field :password, :autocomplete => 'off', :autocapitalize => 'off' %>
-              </li>
+<div class="controls">
+<%= form.email_field :email, :autocomplete => 'off', :autocapitalize => 'off' %>
+</div>
+</div>
 
-         </ol>
+<div class="control-group">
+<%=form.label :password, 'Password', :class =>'control-label' %>
 
-        <%= form.submit "Log In", :class => 'button' %>
+<div class="controls">
+<%= form.password_field :password, :autocomplete => 'off', :autocapitalize => 'off'%>
+</div>
 
-      </fieldset>
+
+</div>
+
     <% end %>
   </div>
+
+

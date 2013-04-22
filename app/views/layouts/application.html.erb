@@ -23,29 +23,34 @@
     <div id="main" role="main">
 
 
-      <div class="container-fluid" >
-            <div class="row-fluid">
-              <% if notice || alert %>
-              <div class="flash_messages">
-              <%= raw "<div data-alert class='alert-box warning'> #{notice} <a href='' class='close'>&times;</a></div>"  if notice %>
+      <div class="container" >
+            
+        <% if notice || alert %>
+          <div class="row">
+            <div class="flash_messages">
+              <%= raw "<div data-alert class='alert-box warning'> #{notice} <a href='' class='close'>&times;</a></div>"  if   znotice %>
               <%= raw "<div data-alert class='alert-box alert'>#{alert} <a href='' class='close'>&times;</a></div>"     if alert %>
             </div>
-              <% end %>
-              </div>
-
-              <div class="row-fluid">
-              <%if current_user %> 
-
-              <% end %>
-              <section id="content" class="span7"> 
-              <%= yield %>
-              </section>
-              <% if current_user %>
- 
-            <% end %>
           </div>
-          <div id='prefooter_wrapper'>&nbsp;</div>
-      </div>  <!--! end of .container -->
+        <% end %>
+        
+
+        <%if current_user %> 
+          <div class="row">
+           
+            <section id="content" class="span7"> 
+
+            <%= yield %>
+            </section>
+          </div>
+        <% else %>
+          <div class="row well well-small">
+            <section id="content" class="span12"> 
+            <%= yield %>
+            </section>
+          </div>
+         <% end %>
+      </div>
           </div> <!--! end of #main -->
 
       <%= render 'shared/main_footer' %>

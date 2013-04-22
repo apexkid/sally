@@ -1,4 +1,4 @@
-
+  
 <% content_for :head do -%>
   <% if @registration %>
     <%= stylesheet_link_tag 'signup.css' %>
@@ -32,8 +32,24 @@
     </ul>
   </div>
 <% end %>
-<div id='login-wrapper' class='hadean-login'>
 
-<%= render :partial => 'user_sessions/login' %>
-<%= render :partial => 'customer/registrations/user_register' %>
-</div>
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Welcome in to Dwingg!</h1>
+        <p class="lead"> A great place to connect with your friends, shop together with them and have fun. In real time.</p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4" id = 'login'>
+          <%= render :partial => 'user_sessions/login' %>
+        </div>
+        <div class="span8" id='signup'>
+          <%= render :partial => 'customer/registrations/user_register' %>
+       </div>
+
+     </div>
+
+
+      <hr>

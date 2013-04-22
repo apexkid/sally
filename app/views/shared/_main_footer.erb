@@ -5,13 +5,41 @@ loop_footer_tabs = {
   #'Customer Service'    => faq_customer_service_path
 }
 %>
+<footer id="page_footer">
+  <ul class="inline" id='main-footer-tabs'>
+    <% loop_footer_tabs.each_pair do |tab_name, tab_path| %>
+      <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+            <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
 
-<div id="footer_wrapper" class='row'>
-  <div  class='nine large-9 columns'>
-    <ul id='main-footer-tabs' class='inline-list'>
-      <% loop_footer_tabs.each_pair do |tab_name, tab_path| %>
-        <li> <%= link_to_unless_current tab_name, tab_path %> </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+            <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+    <% end %>
+  </ul>
+    <ul class="inline" id='main-footer-tabs'>
+    <% loop_footer_tabs.each_pair do |tab_name, tab_path| %>
+      <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+            <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+    <% end %>
+  </ul>
+    <ul class="inline" id='main-footer-tabs'>
+    <% loop_footer_tabs.each_pair do |tab_name, tab_path| %>
+      <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+            <li> 
+        <%= link_to_unless_current tab_name, tab_path %> 
+      </li>
+    <% end %>
+  </ul>
+</footer>
+
+
