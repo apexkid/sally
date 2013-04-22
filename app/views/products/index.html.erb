@@ -7,8 +7,9 @@
 
   <div id='interesting_items' >
     <ul id='interesting_items-list'>
-      <% @products.each_with_index do |product, i| %>
-        <li id='interesting_product_<%= i %>' class=''>
+     <% if !@products.empty? %>
+      <% @products.each do |product| %>
+        <li id='interesting_product_' class=''>
           <div class='interesting_items-image'>
 
             <%= link_to product_path(product), title: product.name do %>
@@ -38,6 +39,9 @@
           </div>
         </li>
       <% end %>
+      <% else %>
+        <h2> SOrry no such product found </h2>
+      <% end %> 
     </ul>
     <div class='clearfix'></div>
   </div>
